@@ -24,7 +24,7 @@ modprobe snd_bcm2835
 amixer cset numid=3 1
 
 
-if [ "$1" == "kbd" ] then ;
+if [ "$1" == "kbd" ]; then 
 
 
 cat << EOF >> /root/61matrix.dts

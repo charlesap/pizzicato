@@ -26,6 +26,7 @@ amixer cset numid=3 1
 
 if [ "$1" == "kbd" ]; then 
 
+rm /root/61matrix.dts
 
 cat << EOF >> /root/61matrix.dts
     /dts-v1/;
@@ -44,15 +45,9 @@ cat << EOF >> /root/61matrix.dts
 		       try to use GPIO only lines
                        to keep SPI and I2C usable
                     */
-                    row-gpios = <&gpio 4 0    // 0
-                                 &gpio 17 0    // 1
-                                 &gpio 27 0    // 2
-                                 &gpio 22 0    // 3
-                                 &gpio 5 0     // 4
-                                 &gpio 6 0>;   // 5
                                  
 
-                    col-gpios = <&gpio 13 0    // 0
+                    row-gpios = <&gpio 13 0    // 0
                                  &gpio 19 0    // 1
                                  &gpio 26 0    // 2
                                  &gpio 21 0    // 3
@@ -64,6 +59,15 @@ cat << EOF >> /root/61matrix.dts
                                  &gpio 23 0    // 9
                                  &gpio 18 0>;    // 10
                                  
+                    col-gpios = <&gpio 4 0    // 0
+                                 &gpio 17 0    // 1
+                                 &gpio 27 0    // 2
+                                 &gpio 22 0    // 3
+                                 &gpio 5 0     // 4
+                                 &gpio 6 0>;   // 5
+                                 
+
+
                     /*
                       Keycodes from /usr/include/linux/input-event-codes.h
                       converted to hex using printf '%02x\n'

@@ -228,6 +228,6 @@ EOF
 
   dtc -W no-unit_address_vs_reg -I dts -O dtb -o /root/61matrix.dtbo /root/61matrix.dts
   cp /root/61matrix.dtbo /boot/overlays/
-
+  echo "dtoverlay=61matrix" >> /boot/config.txt
 fi
 
